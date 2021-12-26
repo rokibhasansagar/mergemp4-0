@@ -17,14 +17,18 @@ jobs:
         # cache: 'npm'
     - run: |
           npm install
-          echo "::group:: package-lock"
-          cat package-lock.json
-          echo "::endgroup::"
+          git add package-lock.json
+          git commit -as -m "Add npm lockfile"
     - run: |
           npm run build --if-present
           ls -lAogR build/
           tree -h -I node_modules -L 5
+          git add build
+          git commit -as -m "Add Debug Release Files"
     - run: |
           npm run prod --if-present
           ls -lAogR prod/
           tree -h -I node_modules -L 5
+          git add prod
+          git commit -as -m "Add Production Release Files"
+          git push
