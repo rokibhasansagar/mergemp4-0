@@ -19,7 +19,7 @@ jobs:
         # cache: 'npm'
     - run: |
           npm install
-          npm audit fix
+          npm audit fix --force
           echo "::group:: package-lock"
           cat package-lock.json
           echo "::endgroup::"
