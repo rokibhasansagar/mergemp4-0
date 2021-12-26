@@ -19,11 +19,15 @@ jobs:
         # cache: 'npm'
     - run: |
           npm install
+          npm audit fix
+          echo "::group:: package-lock"
+          cat package-lock.json
+          echo "::endgroup::"
     - run: |
           npm run build --if-present
-          ls -lAog build/*
-          tree -I node_modules -L 5
+          ls -lAogR build/
+          tree -h -I node_modules -L 5
     - run: |
           npm run prod --if-present
-          ls -lAog prod/*
-          tree -I node_modules -L 5
+          ls -lAogR prod/
+          tree -h -I node_modules -L 5
