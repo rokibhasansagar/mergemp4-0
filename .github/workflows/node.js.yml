@@ -16,7 +16,10 @@ jobs:
         node-version: '16.x'
         # cache: 'npm'
     - run: |
+          ls -lAog && echo
           npm install
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add package-lock.json
           git commit -as -m "Add npm lockfile"
     - run: |
