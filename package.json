@@ -13,7 +13,7 @@
 	},
 	"scripts": {
 		"dev": "poi src/index.html --serve",
-		"build": "poi src/index.html --public-url=/mergemp4/ --out-dir=build",
-		"prod": "poi src/index.html --prod --public-url=/mergemp4/ --out-dir=prod"
+		"build": "poi src/index.html --public-url=/mergemp4/build/ --out-dir=build",
+		"prod": "poi src/index.html --prod --public-url=/mergemp4/prod/ --out-dir=prod"
 	}
 }
